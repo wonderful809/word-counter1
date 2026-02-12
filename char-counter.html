@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Counter - Track Character Limits for Twitter & Instagram</title>
-    <meta name="description" content="Free online character counter with Twitter (280 chars) and Instagram (2200 chars) limit indicators. Real-time character counting with and without spaces.">
+    <title>Character Counter - Track Characters with Twitter & Instagram Limits | TextTools</title>
+    <meta name="description" content="Free online character counter tool. Track characters, words, sentences with real-time Twitter and Instagram character limit indicators. Perfect for social media posts.">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Character Counter - Twitter & Instagram Character Limits">
-    <meta property="og:description" content="Track character counts with Twitter and Instagram limit indicators.">
+    <meta property="og:title" content="Character Counter - Free Character & Social Media Limit Tracker">
+    <meta property="og:description" content="Track characters with Twitter and Instagram limits in real-time.">
     <meta property="og:type" content="website">
     
     <!-- Google Fonts -->
@@ -19,48 +19,112 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <div class="container">
-            <a href="index.html" class="logo">📝 Text Tools Hub</a>
-            <ul class="nav-links">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📝</span>
+                <span>TextTools</span>
+            </a>
+            
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="word-counter.html">Word Counter</a></li>
-                <li><a href="char-counter.html" class="active">Char Counter</a></li>
-                <li><a href="case-converter.html">Case Converter</a></li>
-                <li><a href="remove-line-breaks.html">Line Breaks</a></li>
-                <li><a href="formatter.html">Formatter</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-trigger">All Tools</a>
+                    <div class="dropdown-menu">
+                        <a href="word-counter.html">
+                            <span class="tool-icon">📊</span>
+                            <span>Word Counter</span>
+                        </a>
+                        <a href="char-counter.html">
+                            <span class="tool-icon">🔢</span>
+                            <span>Character Counter</span>
+                        </a>
+                        <a href="case-converter.html">
+                            <span class="tool-icon">🔄</span>
+                            <span>Case Converter</span>
+                        </a>
+                        <a href="remove-line-breaks.html">
+                            <span class="tool-icon">📄</span>
+                            <span>Remove Line Breaks</span>
+                        </a>
+                        <a href="formatter.html">
+                            <span class="tool-icon">✨</span>
+                            <span>Text Formatter</span>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="index.html#about">About</a></li>
             </ul>
+            
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+                    🌙
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+                    ☰
+                </button>
+            </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="logo">📝 TextTools</span>
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                ✕
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="word-counter.html">📊 Word Counter</a></li>
+                <li><a href="char-counter.html" class="active">🔢 Character Counter</a></li>
+                <li><a href="case-converter.html">🔄 Case Converter</a></li>
+                <li><a href="remove-line-breaks.html">📄 Remove Line Breaks</a></li>
+                <li><a href="formatter.html">✨ Text Formatter</a></li>
+                <li><a href="index.html#about">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Tool Header Banner -->
+    <div class="tool-header">
+        <h1>Character Counter</h1>
+        <p>Track characters with Twitter and Instagram limit indicators in real-time</p>
+    </div>
+
+    <!-- Main Content -->
     <main>
         <div class="container">
-            <section class="tool-section">
-                <h1>Character Counter</h1>
-                
-                <div class="intro-text">
-                    <p><strong>Need to track your character count?</strong> Our Character Counter is the perfect tool for social media managers, writers, and content creators who need to stay within specific character limits. Whether you're crafting the perfect tweet, writing an Instagram caption, or ensuring your text message isn't too long, this tool provides real-time character tracking with instant feedback.</p>
-                    
-                    <p>This character counter goes beyond simple counting – it includes visual progress bars for popular social media platforms. The <strong>Twitter indicator</strong> shows how close you are to the 280-character limit, turning yellow as you approach the limit and red when you exceed it. The <strong>Instagram caption indicator</strong> tracks your progress toward the 2,200-character limit, helping you maximize your caption length while staying within platform constraints.</p>
-                    
-                    <p>The tool displays both total characters (including spaces and punctuation) and characters without spaces. This is useful because different platforms and applications count characters differently. Some word processors don't count spaces, while social media platforms do. Our counter shows both metrics simultaneously, so you always have the information you need. Perfect for writers tracking manuscript length, students working on assignments with character limits, or anyone who needs precise text measurement.</p>
-                </div>
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span>Character Counter</span>
+            </nav>
 
+            <!-- Tool Section -->
+            <section class="tool-section">
                 <h2>Enter Your Text</h2>
-                <textarea id="textInput" placeholder="Start typing or paste your text here..."></textarea>
+                <textarea id="textInput" placeholder="Start typing or paste your text here..." aria-label="Text input"></textarea>
 
                 <div class="btn-group">
                     <button id="clearBtn" class="secondary">Clear Text</button>
                 </div>
 
-                <h2>Statistics</h2>
+                <h3>Statistics</h3>
                 <div class="stats">
                     <div class="stat-box">
                         <div class="label">Total Characters</div>
                         <div class="value" id="totalChars">0</div>
                     </div>
                     <div class="stat-box">
-                        <div class="label">Characters (no spaces)</div>
+                        <div class="label">No Spaces</div>
                         <div class="value" id="charsNoSpaces">0</div>
                     </div>
                     <div class="stat-box">
@@ -73,36 +137,177 @@
                     </div>
                 </div>
 
-                <h2>Platform Limits</h2>
-                
+                <h3>Social Media Limits</h3>
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Twitter (280 character limit)</span>
+                        <span>Twitter (X)</span>
                         <span id="twitterCount">0 / 280</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" id="twitterProgress"></div>
+                        <div id="twitterProgress" class="progress-fill"></div>
                     </div>
                 </div>
 
                 <div class="progress-container">
                     <div class="progress-label">
-                        <span>Instagram Caption (2,200 character limit)</span>
-                        <span id="instagramCount">0 / 2,200</span>
+                        <span>Instagram Caption</span>
+                        <span id="instagramCount">0 / 2200</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" id="instagramProgress"></div>
+                        <div id="instagramProgress" class="progress-fill"></div>
                     </div>
+                </div>
+            </section>
+
+            <!-- SEO Content: How to Use -->
+            <section class="seo-section">
+                <div class="how-to-use">
+                    <h2>How to Use the Character Counter</h2>
+                    <ol>
+                        <li><strong>Type or paste your text</strong> into the text area above. The counter works in real-time with any text content.</li>
+                        <li><strong>View character statistics</strong> instantly, including total characters, characters without spaces, words, and sentences.</li>
+                        <li><strong>Check social media limits</strong> with visual progress bars for Twitter (280 characters) and Instagram (2200 characters).</li>
+                        <li><strong>Clear the text</strong> using the "Clear Text" button when you want to start a new count.</li>
+                    </ol>
+                </div>
+
+                <!-- Benefits -->
+                <h2>Why Use Our Character Counter?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="icon">📱</div>
+                        <h3>Social Media Ready</h3>
+                        <p>Built-in Twitter and Instagram character limits help you stay within platform requirements with visual indicators.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">⚡</div>
+                        <h3>Real-Time Tracking</h3>
+                        <p>See character counts update instantly as you type, with color-coded progress bars that warn when approaching limits.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">🎯</div>
+                        <h3>Detailed Analytics</h3>
+                        <p>Get comprehensive metrics including characters with/without spaces, word count, and sentence count all in one place.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What's the difference between total characters and characters without spaces?</div>
+                    <div class="faq-answer">
+                        <p>Total characters includes every character in your text, including spaces, punctuation, and line breaks. Characters without spaces excludes all whitespace, showing only letters, numbers, and symbols.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Why does Twitter have a 280 character limit?</div>
+                    <div class="faq-answer">
+                        <p>Twitter (now X) expanded from 140 to 280 characters in 2017 to allow for more expressive tweets. Our counter helps you maximize your message while staying within this limit.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What happens when I exceed the character limit?</div>
+                    <div class="faq-answer">
+                        <p>The progress bar will turn red to alert you when you've exceeded a platform's limit. You'll need to trim your text before posting to that social media platform.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is my text data stored or tracked?</div>
+                    <div class="faq-answer">
+                        <p>No, all processing happens in your browser. Your text never leaves your device, isn't sent to any server, and we don't store or track any of your content.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Try Another Tool Section -->
+            <section class="try-another-section">
+                <h2>Try Another Tool</h2>
+                <div class="tool-suggestions">
+                    <a href="word-counter.html" class="tool-suggestion-card">
+                        <div class="icon">📊</div>
+                        <h3>Word Counter</h3>
+                        <p>Count words, sentences, and reading time</p>
+                    </a>
+                    
+                    <a href="case-converter.html" class="tool-suggestion-card">
+                        <div class="icon">🔄</div>
+                        <h3>Case Converter</h3>
+                        <p>Transform text between different cases</p>
+                    </a>
+                    
+                    <a href="formatter.html" class="tool-suggestion-card">
+                        <div class="icon">✨</div>
+                        <h3>Text Formatter</h3>
+                        <p>Advanced formatting and sorting options</p>
+                    </a>
+                    
+                    <a href="remove-line-breaks.html" class="tool-suggestion-card">
+                        <div class="icon">📄</div>
+                        <h3>Remove Line Breaks</h3>
+                        <p>Clean up text by removing line breaks</p>
+                    </a>
                 </div>
             </section>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Text Tools & Word Counter Hub. All rights reserved.</p>
-        <p><a href="https://github.com/wonderful809/word-counter1">Open Source on GitHub</a></p>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>TextTools</h3>
+                <p>Professional text utilities for everyone. Fast, free, and privacy-focused.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Tools</h3>
+                <ul>
+                    <li><a href="word-counter.html">Word Counter</a></li>
+                    <li><a href="char-counter.html">Character Counter</a></li>
+                    <li><a href="case-converter.html">Case Converter</a></li>
+                    <li><a href="remove-line-breaks.html">Remove Line Breaks</a></li>
+                    <li><a href="formatter.html">Text Formatter</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="https://github.com/wonderful809/word-counter1">GitHub</a></li>
+                    <li><a href="https://github.com/wonderful809/word-counter1/issues">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="https://github.com/wonderful809/word-counter1" aria-label="GitHub">⚙️</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 TextTools. All rights reserved. | Made with ❤️ for text lovers everywhere | <a href="https://github.com/wonderful809/word-counter1">Open Source</a></p>
+        </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+    <script src="js/shared.js"></script>
     <script src="js/char-counter.js"></script>
 </body>
 </html>

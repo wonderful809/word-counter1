@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const removeBtn = document.getElementById('removeBtn');
     const copyBtn = document.getElementById('copyBtn');
     const clearBtn = document.getElementById('clearBtn');
-    const copyAlert = document.getElementById('copyAlert');
     const radioButtons = document.querySelectorAll('input[name="breakOption"]');
 
     // Get selected option
@@ -39,29 +38,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Copy to clipboard
-    async function copyToClipboard() {
+    async function copyToClipboardHandler() {
         const text = outputText.value;
         if (text.trim() === '') {
             return;
         }
-
-        try {
-            await navigator.clipboard.writeText(text);
-            showCopyAlert();
-        } catch (err) {
-            // Fallback for older browsers
-            outputText.select();
-            document.execCommand('copy');
-            showCopyAlert();
-        }
-    }
-
-    // Show copy success message
-    function showCopyAlert() {
-        copyAlert.style.display = 'block';
-        setTimeout(() => {
-            copyAlert.style.display = 'none';
-        }, 3000);
+        await window.copyToClipboard(text, copyBtn);
     }
 
     // Clear all text
@@ -73,7 +55,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listeners
     removeBtn.addEventListener('click', removeLineBreaks);
-    copyBtn.addEventListener('click', copyToClipboard);
+    removeBtn.setAttribute('data-primary-action', 'true');
+    copyBtn.addEventListener('click', copyToClipboardHandler);
+    copyBtn.setAttribute('data-copy-action', 'true');
     clearBtn.addEventListener('click', clearAll);
     
     // Auto-update when radio button changes

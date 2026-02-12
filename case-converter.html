@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Converter - UPPERCASE, lowercase, Title Case & More</title>
-    <meta name="description" content="Free online case converter tool. Transform text between UPPERCASE, lowercase, Title Case, Sentence case, and tOGGLE cASE instantly. Includes copy to clipboard feature.">
+    <title>Case Converter - Transform Text to Upper, Lower, Title, Sentence Case | TextTools</title>
+    <meta name="description" content="Free online case converter tool. Convert text to UPPERCASE, lowercase, Title Case, Sentence case, and tOGGLE cASE instantly. Perfect for formatting text quickly.">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Case Converter - Transform Text Case Instantly">
-    <meta property="og:description" content="Convert text between different cases with one click. UPPERCASE, lowercase, Title Case, and more.">
+    <meta property="og:description" content="Convert text between different cases: uppercase, lowercase, title case, sentence case, and toggle case.">
     <meta property="og:type" content="website">
     
     <!-- Google Fonts -->
@@ -19,67 +19,267 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <div class="container">
-            <a href="index.html" class="logo">📝 Text Tools Hub</a>
-            <ul class="nav-links">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📝</span>
+                <span>TextTools</span>
+            </a>
+            
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="word-counter.html">Word Counter</a></li>
-                <li><a href="char-counter.html">Char Counter</a></li>
-                <li><a href="case-converter.html" class="active">Case Converter</a></li>
-                <li><a href="remove-line-breaks.html">Line Breaks</a></li>
-                <li><a href="formatter.html">Formatter</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-trigger">All Tools</a>
+                    <div class="dropdown-menu">
+                        <a href="word-counter.html">
+                            <span class="tool-icon">📊</span>
+                            <span>Word Counter</span>
+                        </a>
+                        <a href="char-counter.html">
+                            <span class="tool-icon">🔢</span>
+                            <span>Character Counter</span>
+                        </a>
+                        <a href="case-converter.html">
+                            <span class="tool-icon">🔄</span>
+                            <span>Case Converter</span>
+                        </a>
+                        <a href="remove-line-breaks.html">
+                            <span class="tool-icon">📄</span>
+                            <span>Remove Line Breaks</span>
+                        </a>
+                        <a href="formatter.html">
+                            <span class="tool-icon">✨</span>
+                            <span>Text Formatter</span>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="index.html#about">About</a></li>
             </ul>
+            
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+                    🌙
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+                    ☰
+                </button>
+            </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="logo">📝 TextTools</span>
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                ✕
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="word-counter.html">📊 Word Counter</a></li>
+                <li><a href="char-counter.html">🔢 Character Counter</a></li>
+                <li><a href="case-converter.html" class="active">🔄 Case Converter</a></li>
+                <li><a href="remove-line-breaks.html">📄 Remove Line Breaks</a></li>
+                <li><a href="formatter.html">✨ Text Formatter</a></li>
+                <li><a href="index.html#about">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Tool Header Banner -->
+    <div class="tool-header">
+        <h1>Case Converter</h1>
+        <p>Transform text between different cases with a single click</p>
+    </div>
+
+    <!-- Main Content -->
     <main>
         <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span>Case Converter</span>
+            </nav>
+
+            <!-- Tool Section -->
             <section class="tool-section">
-                <h1>Case Converter</h1>
-                
-                <div class="intro-text">
-                    <p><strong>Transform your text with one click!</strong> Our Case Converter is a versatile tool that instantly changes the capitalization of your text. Whether you accidentally typed with Caps Lock on, need to format titles properly, or want to emphasize certain text, this tool makes it effortless. It's perfect for writers, editors, students, and anyone who works with text regularly.</p>
-                    
-                    <p>The Case Converter supports five different transformation modes: <strong>UPPERCASE</strong> converts all letters to capitals (perfect for headings and emphasis), <strong>lowercase</strong> makes everything small letters, <strong>Title Case</strong> capitalizes the first letter of each word (ideal for titles and headings), <strong>Sentence case</strong> capitalizes only the first letter of each sentence (standard for paragraphs), and <strong>tOGGLE cASE</strong> flips the case of every letter (useful for fixing accidentally typed text with Caps Lock on).</p>
-                    
-                    <p>Using this tool is simple: paste or type your text in the input box, click the conversion button you want, and instantly see the transformed text in the output area. You can then easily copy the result to your clipboard with a single click. This is especially useful when you need to quickly reformat text copied from various sources, standardize capitalization across documents, or prepare text for different platforms with specific formatting requirements. No more manual retyping – let our Case Converter handle it for you!</p>
-                </div>
-
                 <h2>Enter Your Text</h2>
-                <textarea id="inputText" placeholder="Start typing or paste your text here..."></textarea>
+                <textarea id="inputText" placeholder="Type or paste your text here..." aria-label="Input text"></textarea>
 
-                <h2>Convert To</h2>
+                <h3>Convert To</h3>
                 <div class="btn-group">
-                    <button id="upperCaseBtn">UPPERCASE</button>
-                    <button id="lowerCaseBtn">lowercase</button>
-                    <button id="titleCaseBtn">Title Case</button>
-                    <button id="sentenceCaseBtn">Sentence case</button>
-                    <button id="toggleCaseBtn">tOGGLE cASE</button>
+                    <button id="upperCaseBtn" class="primary">UPPERCASE</button>
+                    <button id="lowerCaseBtn" class="primary">lowercase</button>
+                    <button id="titleCaseBtn" class="primary">Title Case</button>
+                    <button id="sentenceCaseBtn" class="primary">Sentence case</button>
+                    <button id="toggleCaseBtn" class="primary">tOGGLE cASE</button>
                 </div>
 
-                <div class="output-section">
-                    <h3>Converted Text</h3>
-                    <textarea id="outputText" class="output" readonly placeholder="Your converted text will appear here..."></textarea>
-                    
-                    <div class="btn-group">
-                        <button id="copyBtn">Copy to Clipboard</button>
-                        <button id="clearBtn" class="secondary">Clear All</button>
+                <h3>Converted Text</h3>
+                <textarea id="outputText" placeholder="Your converted text will appear here..." aria-label="Output text" readonly></textarea>
+
+                <div class="btn-group">
+                    <button id="copyBtn" class="secondary">Copy to Clipboard</button>
+                    <button id="clearBtn" class="secondary">Clear All</button>
+                </div>
+            </section>
+
+            <!-- SEO Content: How to Use -->
+            <section class="seo-section">
+                <div class="how-to-use">
+                    <h2>How to Use the Case Converter</h2>
+                    <ol>
+                        <li><strong>Paste or type your text</strong> into the input text area at the top.</li>
+                        <li><strong>Click a conversion button</strong> to transform your text to the desired case format.</li>
+                        <li><strong>View the converted text</strong> instantly in the output area below.</li>
+                        <li><strong>Copy the result</strong> using the "Copy to Clipboard" button, or clear everything to start fresh.</li>
+                    </ol>
+                </div>
+
+                <!-- Benefits -->
+                <h2>Why Use Our Case Converter?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="icon">⚡</div>
+                        <h3>Instant Conversion</h3>
+                        <p>Transform text between five different case formats with a single click. No manual editing required.</p>
                     </div>
                     
-                    <div id="copyAlert" class="alert success" style="display: none;">
-                        ✓ Text copied to clipboard!
+                    <div class="benefit-card">
+                        <div class="icon">🎨</div>
+                        <h3>Multiple Formats</h3>
+                        <p>Convert to UPPERCASE, lowercase, Title Case, Sentence case, or toggle case for any formatting need.</p>
                     </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">💼</div>
+                        <h3>Professional Results</h3>
+                        <p>Perfect for fixing CAPS LOCK mistakes, formatting titles, or standardizing text for professional documents.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">What's the difference between Title Case and Sentence case?</div>
+                    <div class="faq-answer">
+                        <p>Title Case capitalizes the first letter of every word, making it ideal for headlines and titles (e.g., "The Quick Brown Fox"). Sentence case only capitalizes the first letter of each sentence, like normal prose (e.g., "The quick brown fox. Another sentence here.").</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What does the tOGGLE cASE option do?</div>
+                    <div class="faq-answer">
+                        <p>Toggle case inverts the case of every character in your text. Lowercase letters become uppercase and uppercase letters become lowercase. It's useful for fixing text that was typed with CAPS LOCK accidentally enabled.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I convert text in multiple languages?</div>
+                    <div class="faq-answer">
+                        <p>Yes! The case converter works with any language that has uppercase and lowercase letters, including accented characters and special alphabets.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is my text saved or stored anywhere?</div>
+                    <div class="faq-answer">
+                        <p>No, all text conversion happens locally in your browser. Your text is never uploaded to any server or stored anywhere. Your privacy is completely protected.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Try Another Tool Section -->
+            <section class="try-another-section">
+                <h2>Try Another Tool</h2>
+                <div class="tool-suggestions">
+                    <a href="word-counter.html" class="tool-suggestion-card">
+                        <div class="icon">📊</div>
+                        <h3>Word Counter</h3>
+                        <p>Count words, sentences, and reading time</p>
+                    </a>
+                    
+                    <a href="char-counter.html" class="tool-suggestion-card">
+                        <div class="icon">🔢</div>
+                        <h3>Character Counter</h3>
+                        <p>Track characters with Twitter and Instagram limits</p>
+                    </a>
+                    
+                    <a href="formatter.html" class="tool-suggestion-card">
+                        <div class="icon">✨</div>
+                        <h3>Text Formatter</h3>
+                        <p>Advanced formatting and sorting options</p>
+                    </a>
+                    
+                    <a href="remove-line-breaks.html" class="tool-suggestion-card">
+                        <div class="icon">📄</div>
+                        <h3>Remove Line Breaks</h3>
+                        <p>Clean up text by removing line breaks</p>
+                    </a>
                 </div>
             </section>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Text Tools & Word Counter Hub. All rights reserved.</p>
-        <p><a href="https://github.com/wonderful809/word-counter1">Open Source on GitHub</a></p>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>TextTools</h3>
+                <p>Professional text utilities for everyone. Fast, free, and privacy-focused.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Tools</h3>
+                <ul>
+                    <li><a href="word-counter.html">Word Counter</a></li>
+                    <li><a href="char-counter.html">Character Counter</a></li>
+                    <li><a href="case-converter.html">Case Converter</a></li>
+                    <li><a href="remove-line-breaks.html">Remove Line Breaks</a></li>
+                    <li><a href="formatter.html">Text Formatter</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="https://github.com/wonderful809/word-counter1">GitHub</a></li>
+                    <li><a href="https://github.com/wonderful809/word-counter1/issues">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="https://github.com/wonderful809/word-counter1" aria-label="GitHub">⚙️</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 TextTools. All rights reserved. | Made with ❤️ for text lovers everywhere | <a href="https://github.com/wonderful809/word-counter1">Open Source</a></p>
+        </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+    <script src="js/shared.js"></script>
     <script src="js/case-converter.js"></script>
 </body>
 </html>

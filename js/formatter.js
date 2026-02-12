@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const formatBtn = document.getElementById('formatBtn');
     const copyBtn = document.getElementById('copyBtn');
     const clearBtn = document.getElementById('clearBtn');
-    const copyAlert = document.getElementById('copyAlert');
     
     const trimWhitespaceCheckbox = document.getElementById('trimWhitespace');
     const removeExtraSpacesCheckbox = document.getElementById('removeExtraSpaces');
@@ -55,29 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Copy to clipboard
-    async function copyToClipboard() {
+    async function copyToClipboardHandler() {
         const text = outputText.value;
         if (text.trim() === '') {
             return;
         }
-
-        try {
-            await navigator.clipboard.writeText(text);
-            showCopyAlert();
-        } catch (err) {
-            // Fallback for older browsers
-            outputText.select();
-            document.execCommand('copy');
-            showCopyAlert();
-        }
-    }
-
-    // Show copy success message
-    function showCopyAlert() {
-        copyAlert.style.display = 'block';
-        setTimeout(() => {
-            copyAlert.style.display = 'none';
-        }, 3000);
+        await window.copyToClipboard(text, copyBtn);
     }
 
     // Clear all text
@@ -95,6 +77,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listeners
     formatBtn.addEventListener('click', formatText);
-    copyBtn.addEventListener('click', copyToClipboard);
+    formatBtn.setAttribute('data-primary-action', 'true');
+    copyBtn.addEventListener('click', copyToClipboardHandler);
+    copyBtn.setAttribute('data-copy-action', 'true');
     clearBtn.addEventListener('click', clearAll);
 });

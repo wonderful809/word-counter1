@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter - Count Words, Characters, Sentences & Reading Time</title>
+    <meta name="description" content="Free online word counter tool. Count words, characters (with and without spaces), sentences, paragraphs, and estimate reading time. Perfect for essays, articles, and content creation.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Word Counter - Free Online Word & Character Counter">
+    <meta property="og:description" content="Count words, characters, sentences, paragraphs, and estimate reading time instantly.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">📝 Text Tools Hub</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="word-counter.html" class="active">Word Counter</a></li>
+                <li><a href="char-counter.html">Char Counter</a></li>
+                <li><a href="case-converter.html">Case Converter</a></li>
+                <li><a href="remove-line-breaks.html">Line Breaks</a></li>
+                <li><a href="formatter.html">Formatter</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="tool-section">
+                <h1>Word Counter</h1>
+                
+                <div class="intro-text">
+                    <p><strong>Welcome to our free Word Counter tool!</strong> This powerful utility helps you count words, characters, sentences, and paragraphs in real-time. Whether you're a student working on an essay with a specific word count requirement, a writer tracking your daily progress, a blogger optimizing content length, or a social media manager ensuring your posts fit platform limits – this tool is designed for you.</p>
+                    
+                    <p>Simply paste or type your text in the box below, and watch as the statistics update instantly. No need to click any buttons – the counts refresh automatically as you type. Track not just words and characters, but also sentences, paragraphs, and even get an estimated reading time based on average reading speed (approximately 200 words per minute). This is particularly useful for content creators who want to ensure their articles are the right length for their audience's attention span.</p>
+                    
+                    <p>The character counter shows both total characters (including spaces) and characters without spaces, which is helpful for platforms with different counting methods. For example, Twitter counts all characters including spaces, while some writing competitions count only letters and numbers. Our tool gives you both metrics so you're always prepared. Whether you're checking if your essay meets the 500-word requirement or making sure your tweet doesn't exceed 280 characters, this word counter has you covered.</p>
+                </div>
+
+                <h2>Enter Your Text</h2>
+                <textarea id="textInput" placeholder="Start typing or paste your text here..."></textarea>
+
+                <div class="btn-group">
+                    <button id="clearBtn" class="secondary">Clear Text</button>
+                </div>
+
+                <h2>Statistics</h2>
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="label">Words</div>
+                        <div class="value" id="wordCount">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="label">Characters (with spaces)</div>
+                        <div class="value" id="charCountWithSpaces">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="label">Characters (no spaces)</div>
+                        <div class="value" id="charCountNoSpaces">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="label">Sentences</div>
+                        <div class="value" id="sentenceCount">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="label">Paragraphs</div>
+                        <div class="value" id="paragraphCount">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="label">Reading Time</div>
+                        <div class="value" id="readingTime">0 min</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Text Tools & Word Counter Hub. All rights reserved.</p>
+        <p><a href="https://github.com/wonderful809/word-counter1">Open Source on GitHub</a></p>
+    </footer>
+
+    <script src="js/word-counter.js"></script>
+</body>
+</html>
