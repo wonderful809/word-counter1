@@ -2,6 +2,25 @@
 
 A complete, static, frontend-only collection of free text manipulation tools with a modern orange-accent UI. Perfect for writers, students, bloggers, social media managers, and developers.
 
+## 👀 Preview the Site
+
+**Want to see the interactive UI/UX enhancements?** Check out [PREVIEW.md](PREVIEW.md) for a complete guide!
+
+### Quick Start (Local Preview)
+```bash
+# Clone and navigate to the repository
+git clone https://github.com/wonderful809/word-counter1.git
+cd word-counter1
+
+# Checkout the enhanced branch
+git checkout copilot/enhance-ui-ux-interactivity
+
+# Start a local server
+python3 -m http.server 8080
+
+# Open in browser: http://localhost:8080/index.html
+```
+
 ## 🚀 Features
 
 - **100% Client-Side**: All processing happens in your browser - no data is sent to any server
