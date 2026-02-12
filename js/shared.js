@@ -475,6 +475,50 @@
         }
     };
 
+    // ==================== Mobile Action Bar ====================
+    const MobileActionBar = {
+        init() {
+            // Only create on tool pages (not homepage) and on mobile
+            if (window.innerWidth <= 768 && !window.location.pathname.includes('index.html') 
+                && window.location.pathname !== '/') {
+                this.createActionBar();
+            }
+            
+            // Handle resize
+            window.addEventListener('resize', () => {
+                const bar = document.querySelector('.mobile-action-bar');
+                if (window.innerWidth <= 768 && !bar) {
+                    this.createActionBar();
+                } else if (window.innerWidth > 768 && bar) {
+                    bar.remove();
+                }
+            });
+        },
+
+        createActionBar() {
+            const existingBar = document.querySelector('.mobile-action-bar');
+            if (existingBar) return;
+
+            const bar = document.createElement('div');
+            bar.className = 'mobile-action-bar';
+            
+            // Find primary buttons on the page
+            const btnGroup = document.querySelector('.btn-group');
+            if (!btnGroup) return;
+            
+            const buttons = Array.from(btnGroup.querySelectorAll('button'));
+            
+            buttons.forEach(button => {
+                const clone = button.cloneNode(true);
+                // Copy event listeners by recreating click events
+                clone.addEventListener('click', () => button.click());
+                bar.appendChild(clone);
+            });
+            
+            document.body.appendChild(bar);
+        }
+    };
+
     // ==================== Initialize Everything ====================
     document.addEventListener('DOMContentLoaded', function() {
         // Check for prefers-reduced-motion
@@ -495,6 +539,7 @@
         HamburgerMenu.init();
         ButtonRipple.init();
         CopyFeedback.init();
+        MobileActionBar.init();
     });
 
 })();
