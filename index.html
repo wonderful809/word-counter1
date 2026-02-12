@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Tools & Word Counter Hub - Free Online Text Utilities</title>
+    <title>TextTools - Every tool you need to work with text | Free Online Text Utilities</title>
     <meta name="description" content="Free online text tools including word counter, character counter, case converter, line break remover, and text formatter. Perfect for writers, students, and content creators.">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Text Tools & Word Counter Hub - Free Online Text Utilities">
-    <meta property="og:description" content="Free online text tools including word counter, character counter, case converter, and more.">
+    <meta property="og:title" content="TextTools - Free Online Text Utilities">
+    <meta property="og:description" content="Every tool you need to work with text. Word counter, character counter, case converter, and more.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://wonderful809.github.io/word-counter1/">
     
@@ -20,80 +20,229 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <div class="container">
-            <a href="index.html" class="logo">📝 Text Tools Hub</a>
-            <ul class="nav-links">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📝</span>
+                <span>TextTools</span>
+            </a>
+            
+            <ul class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="word-counter.html">Word Counter</a></li>
-                <li><a href="char-counter.html">Char Counter</a></li>
-                <li><a href="case-converter.html">Case Converter</a></li>
-                <li><a href="remove-line-breaks.html">Line Breaks</a></li>
-                <li><a href="formatter.html">Formatter</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-trigger">All Tools</a>
+                    <div class="dropdown-menu">
+                        <a href="word-counter.html">
+                            <span class="tool-icon">📊</span>
+                            <span>Word Counter</span>
+                        </a>
+                        <a href="char-counter.html">
+                            <span class="tool-icon">🔢</span>
+                            <span>Character Counter</span>
+                        </a>
+                        <a href="case-converter.html">
+                            <span class="tool-icon">🔄</span>
+                            <span>Case Converter</span>
+                        </a>
+                        <a href="remove-line-breaks.html">
+                            <span class="tool-icon">📄</span>
+                            <span>Remove Line Breaks</span>
+                        </a>
+                        <a href="formatter.html">
+                            <span class="tool-icon">✨</span>
+                            <span>Text Formatter</span>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="#about">About</a></li>
             </ul>
+            
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+                    🌙
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+                    ☰
+                </button>
+            </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="logo">📝 TextTools</span>
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                ✕
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="word-counter.html">📊 Word Counter</a></li>
+                <li><a href="char-counter.html">🔢 Character Counter</a></li>
+                <li><a href="case-converter.html">🔄 Case Converter</a></li>
+                <li><a href="remove-line-breaks.html">📄 Remove Line Breaks</a></li>
+                <li><a href="formatter.html">✨ Text Formatter</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
     <main>
+        <!-- Hero Section -->
         <section class="hero">
-            <h1>Text Tools & Word Counter Hub</h1>
-            <p>Your all-in-one collection of free, fast, and easy-to-use text manipulation tools. Perfect for writers, students, bloggers, social media managers, and anyone who works with text.</p>
+            <h1>Every tool you need to work with text</h1>
+            <p>Professional text utilities for writers, students, bloggers, and content creators. Fast, free, and works entirely in your browser.</p>
         </section>
 
-        <section class="container">
-            <div class="intro-text">
-                <h2>Why Use Our Text Tools?</h2>
-                <p>Welcome to the Text Tools & Word Counter Hub – your go-to destination for all text-related utilities. Whether you're a student working on an essay, a writer perfecting your manuscript, a social media manager crafting the perfect post, or a developer cleaning up code, our suite of tools has you covered.</p>
-                
-                <p>All our tools are <strong>100% free</strong>, work entirely in your browser (no data is sent to any server), and provide <strong>instant results</strong> as you type. No sign-up required, no downloads, no hassle. Simply paste your text and let our tools do the work.</p>
-                
-                <p>From counting words and characters to converting case and formatting text, each tool is designed with simplicity and efficiency in mind. The clean, modern interface ensures you can focus on your content without distractions. Plus, everything is mobile-friendly, so you can use these tools on any device, anywhere.</p>
-            </div>
-
+        <!-- Tool Grid -->
+        <div class="container">
             <div class="tool-grid">
-                <a href="word-counter.html" class="tool-card">
-                    <h3>📊 Word Counter</h3>
-                    <p>Count words, characters, sentences, paragraphs, and estimate reading time. Perfect for essays, articles, and social media posts with character limits.</p>
+                <a href="word-counter.html" class="tool-card scroll-reveal">
+                    <div class="tool-icon">
+                        <span>📊</span>
+                    </div>
+                    <h3>Word Counter</h3>
+                    <p>Count words, characters, sentences, and paragraphs. Get estimated reading time instantly.</p>
                 </a>
 
-                <a href="char-counter.html" class="tool-card">
-                    <h3>🔢 Character Counter</h3>
-                    <p>Track character counts with and without spaces. Includes Twitter and Instagram character limit indicators to help you stay within platform constraints.</p>
+                <a href="char-counter.html" class="tool-card scroll-reveal">
+                    <div class="tool-icon">
+                        <span>🔢</span>
+                    </div>
+                    <h3>Character Counter</h3>
+                    <p>Track character counts with Twitter and Instagram limit indicators.</p>
                 </a>
 
-                <a href="case-converter.html" class="tool-card">
-                    <h3>🔄 Case Converter</h3>
-                    <p>Transform text between UPPERCASE, lowercase, Title Case, Sentence case, and tOGGLE cASE. One-click conversion with instant results.</p>
+                <a href="case-converter.html" class="tool-card scroll-reveal">
+                    <div class="tool-icon">
+                        <span>🔄</span>
+                    </div>
+                    <h3>Case Converter</h3>
+                    <p>Transform text between UPPERCASE, lowercase, Title Case, and more.</p>
                 </a>
 
-                <a href="remove-line-breaks.html" class="tool-card">
-                    <h3>📄 Remove Line Breaks</h3>
-                    <p>Clean up text by removing unwanted line breaks. Choose to replace them with spaces or remove them entirely for clean, flowing text.</p>
+                <a href="remove-line-breaks.html" class="tool-card scroll-reveal">
+                    <div class="tool-icon">
+                        <span>📄</span>
+                    </div>
+                    <h3>Remove Line Breaks</h3>
+                    <p>Clean up text by removing unwanted line breaks quickly.</p>
                 </a>
 
-                <a href="formatter.html" class="tool-card">
-                    <h3>✨ Text Formatter</h3>
-                    <p>Advanced text formatting with options to trim whitespace, remove extra spaces, eliminate empty lines, add line numbers, and sort lines alphabetically.</p>
+                <a href="formatter.html" class="tool-card scroll-reveal">
+                    <div class="tool-icon">
+                        <span>✨</span>
+                    </div>
+                    <h3>Text Formatter</h3>
+                    <p>Advanced formatting: trim, sort, add line numbers, and more.</p>
                 </a>
             </div>
 
-            <div class="intro-text">
-                <h2>Features That Matter</h2>
-                <ul style="list-style-position: inside; line-height: 2;">
-                    <li><strong>Real-time Updates:</strong> See results instantly as you type</li>
-                    <li><strong>Privacy First:</strong> All processing happens in your browser</li>
-                    <li><strong>No Sign-up:</strong> Start using tools immediately</li>
-                    <li><strong>Mobile Friendly:</strong> Works seamlessly on all devices</li>
-                    <li><strong>Copy to Clipboard:</strong> Easy one-click copying of results</li>
-                    <li><strong>Clean Interface:</strong> Distraction-free design for maximum productivity</li>
-                </ul>
+            <!-- Promotional Section -->
+            <div class="promo-section scroll-reveal">
+                <h2>More tools coming soon!</h2>
+                <p>We're constantly adding new text utilities to help you work more efficiently. Stay tuned for updates.</p>
             </div>
-        </section>
+
+            <!-- Why Use Section -->
+            <section class="seo-section" id="about">
+                <h2>Why Use Our Text Tools?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card scroll-reveal">
+                        <div class="icon">⚡</div>
+                        <h3>Instant Results</h3>
+                        <p>See changes in real-time as you type. No waiting, no delays.</p>
+                    </div>
+                    
+                    <div class="benefit-card scroll-reveal">
+                        <div class="icon">🔒</div>
+                        <h3>100% Private</h3>
+                        <p>All processing happens in your browser. Your data never leaves your device.</p>
+                    </div>
+                    
+                    <div class="benefit-card scroll-reveal">
+                        <div class="icon">🚀</div>
+                        <h3>No Sign-up</h3>
+                        <p>Start using tools immediately. No registration or account required.</p>
+                    </div>
+                    
+                    <div class="benefit-card scroll-reveal">
+                        <div class="icon">📱</div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Works seamlessly on phones, tablets, and desktops.</p>
+                    </div>
+                    
+                    <div class="benefit-card scroll-reveal">
+                        <div class="icon">💯</div>
+                        <h3>Always Free</h3>
+                        <p>All tools are completely free with no limitations.</p>
+                    </div>
+                    
+                    <div class="benefit-card scroll-reveal">
+                        <div class="icon">🎯</div>
+                        <h3>Clean Interface</h3>
+                        <p>Distraction-free design helps you focus on your work.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Text Tools & Word Counter Hub. All rights reserved.</p>
-        <p><a href="https://github.com/wonderful809/word-counter1">Open Source on GitHub</a></p>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>TextTools</h3>
+                <p>Professional text utilities for everyone. Fast, free, and privacy-focused.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Tools</h3>
+                <ul>
+                    <li><a href="word-counter.html">Word Counter</a></li>
+                    <li><a href="char-counter.html">Character Counter</a></li>
+                    <li><a href="case-converter.html">Case Converter</a></li>
+                    <li><a href="remove-line-breaks.html">Remove Line Breaks</a></li>
+                    <li><a href="formatter.html">Text Formatter</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="https://github.com/wonderful809/word-counter1">GitHub</a></li>
+                    <li><a href="https://github.com/wonderful809/word-counter1/issues">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="https://github.com/wonderful809/word-counter1" aria-label="GitHub">⚙️</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 TextTools. All rights reserved. | Made with ❤️ for text lovers everywhere | <a href="https://github.com/wonderful809/word-counter1">Open Source</a></p>
+        </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+    <script src="js/shared.js"></script>
 </body>
 </html>
