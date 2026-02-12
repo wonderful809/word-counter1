@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Formatter - Trim, Sort & Format Text Online</title>
+    <meta name="description" content="Advanced text formatter to trim whitespace, remove extra spaces, eliminate empty lines, add line numbers, and sort lines alphabetically. Free online text formatting tool.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Text Formatter - Advanced Text Formatting Tool">
+    <meta property="og:description" content="Format text with multiple options: trim whitespace, remove extra spaces, sort lines, and more.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">📝 Text Tools Hub</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="word-counter.html">Word Counter</a></li>
+                <li><a href="char-counter.html">Char Counter</a></li>
+                <li><a href="case-converter.html">Case Converter</a></li>
+                <li><a href="remove-line-breaks.html">Line Breaks</a></li>
+                <li><a href="formatter.html" class="active">Formatter</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="tool-section">
+                <h1>Text Formatter</h1>
+                
+                <div class="intro-text">
+                    <p><strong>Format your text like a pro!</strong> Our Text Formatter is a comprehensive tool that offers multiple formatting options to clean up and organize your text. Whether you're a developer cleaning up code comments, a writer organizing notes, or a data analyst preparing lists, this all-in-one formatter gives you complete control over your text structure and appearance.</p>
+                    
+                    <p>The formatter includes five powerful options that can be combined for maximum flexibility: <strong>Trim Whitespace</strong> removes leading and trailing spaces from the entire text and each line, giving you clean edges. <strong>Remove Extra Spaces</strong> collapses multiple consecutive spaces into a single space, perfect for text copied from various sources that may have inconsistent spacing. <strong>Remove Empty Lines</strong> eliminates blank lines, making your text more compact and organized. <strong>Add Line Numbers</strong> prefixes each line with its number, useful for references, code snippets, or numbered lists. Finally, <strong>Sort Lines Alphabetically</strong> arranges all lines in alphabetical order, ideal for organizing lists, finding duplicates, or preparing data.</p>
+                    
+                    <p>You can select multiple options simultaneously to apply complex formatting in one go. For example, you might trim whitespace, remove extra spaces, and eliminate empty lines all at once to get perfectly clean text. Or you might sort lines alphabetically and then add line numbers to create an organized, numbered list. This tool is invaluable for programmers cleaning up configuration files, writers organizing research notes, students preparing bibliography entries, or anyone who needs precise control over text formatting. The flexible combination of options makes it suitable for countless use cases.</p>
+                </div>
+
+                <h2>Enter Your Text</h2>
+                <textarea id="inputText" placeholder="Paste or type your text here..."></textarea>
+
+                <h2>Formatting Options</h2>
+                <div class="options">
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" id="trimWhitespace">
+                            Trim Leading/Trailing Whitespace
+                        </label>
+                    </div>
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" id="removeExtraSpaces">
+                            Remove Extra Spaces
+                        </label>
+                    </div>
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" id="removeEmptyLines">
+                            Remove Empty Lines
+                        </label>
+                    </div>
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" id="addLineNumbers">
+                            Add Line Numbers
+                        </label>
+                    </div>
+                    <div class="option-group">
+                        <label>
+                            <input type="checkbox" id="sortAlphabetically">
+                            Sort Lines Alphabetically
+                        </label>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button id="formatBtn">Format Text</button>
+                    <button id="clearBtn" class="secondary">Clear All</button>
+                </div>
+
+                <div class="output-section">
+                    <h3>Formatted Text</h3>
+                    <textarea id="outputText" class="output" readonly placeholder="Your formatted text will appear here..."></textarea>
+                    
+                    <div class="btn-group">
+                        <button id="copyBtn">Copy to Clipboard</button>
+                    </div>
+                    
+                    <div id="copyAlert" class="alert success" style="display: none;">
+                        ✓ Text copied to clipboard!
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Text Tools & Word Counter Hub. All rights reserved.</p>
+        <p><a href="https://github.com/wonderful809/word-counter1">Open Source on GitHub</a></p>
+    </footer>
+
+    <script src="js/formatter.js"></script>
+</body>
+</html>

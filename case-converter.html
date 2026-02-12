@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Converter - UPPERCASE, lowercase, Title Case & More</title>
+    <meta name="description" content="Free online case converter tool. Transform text between UPPERCASE, lowercase, Title Case, Sentence case, and tOGGLE cASE instantly. Includes copy to clipboard feature.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Case Converter - Transform Text Case Instantly">
+    <meta property="og:description" content="Convert text between different cases with one click. UPPERCASE, lowercase, Title Case, and more.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">📝 Text Tools Hub</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="word-counter.html">Word Counter</a></li>
+                <li><a href="char-counter.html">Char Counter</a></li>
+                <li><a href="case-converter.html" class="active">Case Converter</a></li>
+                <li><a href="remove-line-breaks.html">Line Breaks</a></li>
+                <li><a href="formatter.html">Formatter</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="tool-section">
+                <h1>Case Converter</h1>
+                
+                <div class="intro-text">
+                    <p><strong>Transform your text with one click!</strong> Our Case Converter is a versatile tool that instantly changes the capitalization of your text. Whether you accidentally typed with Caps Lock on, need to format titles properly, or want to emphasize certain text, this tool makes it effortless. It's perfect for writers, editors, students, and anyone who works with text regularly.</p>
+                    
+                    <p>The Case Converter supports five different transformation modes: <strong>UPPERCASE</strong> converts all letters to capitals (perfect for headings and emphasis), <strong>lowercase</strong> makes everything small letters, <strong>Title Case</strong> capitalizes the first letter of each word (ideal for titles and headings), <strong>Sentence case</strong> capitalizes only the first letter of each sentence (standard for paragraphs), and <strong>tOGGLE cASE</strong> flips the case of every letter (useful for fixing accidentally typed text with Caps Lock on).</p>
+                    
+                    <p>Using this tool is simple: paste or type your text in the input box, click the conversion button you want, and instantly see the transformed text in the output area. You can then easily copy the result to your clipboard with a single click. This is especially useful when you need to quickly reformat text copied from various sources, standardize capitalization across documents, or prepare text for different platforms with specific formatting requirements. No more manual retyping – let our Case Converter handle it for you!</p>
+                </div>
+
+                <h2>Enter Your Text</h2>
+                <textarea id="inputText" placeholder="Start typing or paste your text here..."></textarea>
+
+                <h2>Convert To</h2>
+                <div class="btn-group">
+                    <button id="upperCaseBtn">UPPERCASE</button>
+                    <button id="lowerCaseBtn">lowercase</button>
+                    <button id="titleCaseBtn">Title Case</button>
+                    <button id="sentenceCaseBtn">Sentence case</button>
+                    <button id="toggleCaseBtn">tOGGLE cASE</button>
+                </div>
+
+                <div class="output-section">
+                    <h3>Converted Text</h3>
+                    <textarea id="outputText" class="output" readonly placeholder="Your converted text will appear here..."></textarea>
+                    
+                    <div class="btn-group">
+                        <button id="copyBtn">Copy to Clipboard</button>
+                        <button id="clearBtn" class="secondary">Clear All</button>
+                    </div>
+                    
+                    <div id="copyAlert" class="alert success" style="display: none;">
+                        ✓ Text copied to clipboard!
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Text Tools & Word Counter Hub. All rights reserved.</p>
+        <p><a href="https://github.com/wonderful809/word-counter1">Open Source on GitHub</a></p>
+    </footer>
+
+    <script src="js/case-converter.js"></script>
+</body>
+</html>
