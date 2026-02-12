@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const toggleCaseBtn = document.getElementById('toggleCaseBtn');
     const copyBtn = document.getElementById('copyBtn');
     const clearBtn = document.getElementById('clearBtn');
-    const copyAlert = document.getElementById('copyAlert');
 
     // Convert to UPPERCASE
     function toUpperCase() {
@@ -62,29 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Copy to clipboard
-    async function copyToClipboard() {
+    async function copyToClipboardHandler() {
         const text = outputText.value;
         if (text.trim() === '') {
             return;
         }
-
-        try {
-            await navigator.clipboard.writeText(text);
-            showCopyAlert();
-        } catch (err) {
-            // Fallback for older browsers
-            outputText.select();
-            document.execCommand('copy');
-            showCopyAlert();
-        }
-    }
-
-    // Show copy success message
-    function showCopyAlert() {
-        copyAlert.style.display = 'block';
-        setTimeout(() => {
-            copyAlert.style.display = 'none';
-        }, 3000);
+        await window.copyToClipboard(text, copyBtn);
     }
 
     // Clear all text
@@ -100,6 +82,10 @@ document.addEventListener('DOMContentLoaded', function() {
     titleCaseBtn.addEventListener('click', toTitleCase);
     sentenceCaseBtn.addEventListener('click', toSentenceCase);
     toggleCaseBtn.addEventListener('click', toggleCase);
-    copyBtn.addEventListener('click', copyToClipboard);
+    copyBtn.addEventListener('click', copyToClipboardHandler);
+    copyBtn.setAttribute('data-copy-action', 'true');
     clearBtn.addEventListener('click', clearAll);
+    
+    // Set primary action
+    upperCaseBtn.setAttribute('data-primary-action', 'true');
 });

@@ -1,15 +1,27 @@
-# Text Tools & Word Counter Hub
+# TextTools - Professional Text Utilities
 
-A complete, static, frontend-only collection of free text manipulation tools with a modern orange-accent UI. Perfect for writers, students, bloggers, social media managers, and developers.
+A complete, static, frontend-only collection of free text manipulation tools with a professional iLovePDF-inspired UI design and orange color palette. Perfect for writers, students, bloggers, social media managers, and developers.
 
-## 🚀 Features
+## ✨ New Design Features
+
+- **🎨 iLovePDF-Inspired UI**: Clean, modern design with professional look and feel
+- **🌙 Dark Mode**: Toggle between light and dark themes with localStorage persistence
+- **📱 Mobile-First Responsive**: Hamburger menu, slide-in navigation, and optimized layouts
+- **🎯 Smooth Animations**: Scroll reveal, hover effects, and smooth transitions
+- **📊 Enhanced Tool Pages**: Colored header banners, breadcrumbs, FAQs, and "Try Another Tool" sections
+- **⌨️ Keyboard Shortcuts**: Ctrl+Enter for actions, Ctrl+Shift+C for copying
+- **🔝 Back to Top Button**: Appears after scrolling 300px with smooth scroll
+- **🍞 Toast Notifications**: Clean, non-intrusive feedback messages
+- **♿ Accessible**: Proper ARIA labels, semantic HTML, and keyboard navigation
+
+## 🚀 Core Features
 
 - **100% Client-Side**: All processing happens in your browser - no data is sent to any server
 - **Real-Time Updates**: See results instantly as you type
-- **Mobile Responsive**: Works seamlessly on all devices
+- **Mobile Responsive**: Works seamlessly on all devices with dedicated mobile UI
 - **No Sign-Up Required**: Start using tools immediately
-- **Copy to Clipboard**: Easy one-click copying of results
-- **SEO Optimized**: Each page has proper meta tags and semantic HTML
+- **Copy to Clipboard**: Easy one-click copying with visual feedback
+- **SEO Optimized**: Each page has proper meta tags, structured data, and semantic HTML
 
 ## 🛠️ Tools Included
 
@@ -66,15 +78,16 @@ Advanced text formatting with multiple options that can be combined.
 
 ```
 /
-├── index.html                  # Homepage with links to all tools
+├── index.html                  # Homepage with tool grid
 ├── word-counter.html          # Word Counter tool
 ├── char-counter.html          # Character Counter tool
 ├── case-converter.html        # Case Converter tool
 ├── remove-line-breaks.html    # Remove Line Breaks tool
 ├── formatter.html             # Text Formatter tool
 ├── css/
-│   └── style.css             # Shared stylesheet
+│   └── style.css             # Complete CSS with iLovePDF-inspired design
 ├── js/
+│   ├── shared.js             # Shared functionality (dark mode, mobile nav, toasts, etc.)
 │   ├── word-counter.js       # Word Counter logic
 │   ├── char-counter.js       # Character Counter logic
 │   ├── case-converter.js     # Case Converter logic
@@ -83,16 +96,20 @@ Advanced text formatting with multiple options that can be combined.
 └── README.md                  # This file
 ```
 
-## 🎨 Color Palette
+## 🎨 Design System
 
-The site uses a clean, modern orange-accent theme:
+The site uses a clean, modern orange-accent theme inspired by iLovePDF:
 
 - **Primary Orange**: `#FF7F00`
-- **Accent Coral**: `#FF8C42`
-- **Soft White Background**: `#FFFFFF`
-- **Dark Grey Text**: `#333333`
-- **Light Grey**: `#F5F5F5`
-- **Border Color**: `#E0E0E0`
+- **Primary Hover**: `#E06F00`
+- **Primary Light**: `#FFF3E6`
+- **Primary Gradient**: `linear-gradient(135deg, #FF7F00, #FF8C42)`
+- **Text Dark**: `#333333` (Light mode) / `#E0E0E0` (Dark mode)
+- **Text Medium**: `#666666` (Light mode) / `#B0B0B0` (Dark mode)
+- **Background**: `#FFFFFF` (Light mode) / `#1A1A1A` (Dark mode)
+- **Footer Background**: `#2D2D2D`
+
+**Typography**: Inter font family from Google Fonts
 
 ## 🚀 How to Run Locally
 
@@ -171,8 +188,10 @@ SOFTWARE.
 
 ## 🌟 Acknowledgments
 
+- Design Inspiration: [iLovePDF](https://www.ilovepdf.com/)
 - Typography: [Inter Font](https://fonts.google.com/specimen/Inter) from Google Fonts
 - Icons: Emoji icons from Unicode standard
+- Architecture: Vanilla JavaScript, no frameworks or libraries
 
 ## 📧 Contact
 

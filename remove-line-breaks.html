@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remove Line Breaks - Clean Up Text Formatting Instantly</title>
-    <meta name="description" content="Free tool to remove line breaks from text. Choose to replace line breaks with spaces or remove them entirely. Perfect for cleaning up copied text and formatting documents.">
+    <title>Remove Line Breaks - Clean Up Text & Remove Unwanted Line Breaks | TextTools</title>
+    <meta name="description" content="Free online tool to remove line breaks from text. Replace line breaks with spaces or remove them entirely. Perfect for cleaning up copied text and formatting.">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Remove Line Breaks - Text Line Break Remover Tool">
-    <meta property="og:description" content="Remove unwanted line breaks from text instantly. Replace with spaces or remove entirely.">
+    <meta property="og:title" content="Remove Line Breaks - Clean Up Text Instantly">
+    <meta property="og:description" content="Remove unwanted line breaks from text by replacing with spaces or removing entirely.">
     <meta property="og:type" content="website">
     
     <!-- Google Fonts -->
@@ -19,78 +19,274 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Navigation -->
     <nav>
-        <div class="container">
-            <a href="index.html" class="logo">📝 Text Tools Hub</a>
-            <ul class="nav-links">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📝</span>
+                <span>TextTools</span>
+            </a>
+            
+            <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="word-counter.html">Word Counter</a></li>
-                <li><a href="char-counter.html">Char Counter</a></li>
-                <li><a href="case-converter.html">Case Converter</a></li>
-                <li><a href="remove-line-breaks.html" class="active">Line Breaks</a></li>
-                <li><a href="formatter.html">Formatter</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-trigger">All Tools</a>
+                    <div class="dropdown-menu">
+                        <a href="word-counter.html">
+                            <span class="tool-icon">📊</span>
+                            <span>Word Counter</span>
+                        </a>
+                        <a href="char-counter.html">
+                            <span class="tool-icon">🔢</span>
+                            <span>Character Counter</span>
+                        </a>
+                        <a href="case-converter.html">
+                            <span class="tool-icon">🔄</span>
+                            <span>Case Converter</span>
+                        </a>
+                        <a href="remove-line-breaks.html">
+                            <span class="tool-icon">📄</span>
+                            <span>Remove Line Breaks</span>
+                        </a>
+                        <a href="formatter.html">
+                            <span class="tool-icon">✨</span>
+                            <span>Text Formatter</span>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="index.html#about">About</a></li>
             </ul>
+            
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode" aria-pressed="false">
+                    🌙
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+                    ☰
+                </button>
+            </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <span class="logo">📝 TextTools</span>
+            <button class="mobile-menu-close" id="mobileMenuClose" aria-label="Close menu">
+                ✕
+            </button>
+        </div>
+        <div class="mobile-menu-content">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="word-counter.html">📊 Word Counter</a></li>
+                <li><a href="char-counter.html">🔢 Character Counter</a></li>
+                <li><a href="case-converter.html">🔄 Case Converter</a></li>
+                <li><a href="remove-line-breaks.html" class="active">📄 Remove Line Breaks</a></li>
+                <li><a href="formatter.html">✨ Text Formatter</a></li>
+                <li><a href="index.html#about">About</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Tool Header Banner -->
+    <div class="tool-header">
+        <h1>Remove Line Breaks</h1>
+        <p>Clean up text by removing unwanted line breaks from your content</p>
+    </div>
+
+    <!-- Main Content -->
     <main>
         <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span>›</span>
+                <span>Remove Line Breaks</span>
+            </nav>
+
+            <!-- Tool Section -->
             <section class="tool-section">
-                <h1>Remove Line Breaks</h1>
-                
-                <div class="intro-text">
-                    <p><strong>Clean up your text with ease!</strong> Our Remove Line Breaks tool is designed to help you quickly clean up text that has unwanted line breaks or paragraph separators. This is incredibly useful when you copy text from PDFs, emails, or formatted documents that insert line breaks in unexpected places. Instead of manually deleting each line break, our tool does it instantly with a single click.</p>
-                    
-                    <p>Ever copied text from a PDF and found it broken into individual lines? Or received an email where every sentence is on a new line? This tool solves that problem. You have two options: <strong>Replace with Space</strong> keeps your text readable by replacing each line break with a space, ensuring words don't run together. This is perfect for paragraphs where you want continuous flowing text. Alternatively, <strong>Remove Entirely</strong> deletes line breaks without adding spaces, which is useful when joining lines that already have proper spacing.</p>
-                    
-                    <p>This tool is essential for writers preparing manuscripts, students cleaning up research notes, professionals formatting reports, and anyone who needs to convert multi-line text into a single flowing paragraph. It saves you time and frustration by eliminating tedious manual editing. Simply paste your text, choose your preferred option, click the button, and copy the clean result. Perfect for preparing text for social media posts, creating single-line entries, or standardizing formatting across different documents.</p>
-                </div>
-
                 <h2>Enter Your Text</h2>
-                <textarea id="inputText" placeholder="Paste your text with line breaks here..."></textarea>
+                <textarea id="inputText" placeholder="Paste your text with line breaks here..." aria-label="Input text"></textarea>
 
-                <h2>Options</h2>
-                <div class="options">
-                    <div class="option-group">
-                        <label>
-                            <input type="radio" name="breakOption" value="space" checked>
-                            Replace with Space
-                        </label>
-                    </div>
-                    <div class="option-group">
-                        <label>
-                            <input type="radio" name="breakOption" value="remove">
-                            Remove Entirely
-                        </label>
-                    </div>
+                <h3>Options</h3>
+                <div class="radio-group">
+                    <label class="radio-label">
+                        <input type="radio" name="breakOption" value="space" checked>
+                        <span>Replace line breaks with spaces</span>
+                    </label>
+                    <label class="radio-label">
+                        <input type="radio" name="breakOption" value="remove">
+                        <span>Remove line breaks entirely</span>
+                    </label>
                 </div>
 
                 <div class="btn-group">
-                    <button id="removeBtn">Remove Line Breaks</button>
-                    <button id="clearBtn" class="secondary">Clear All</button>
+                    <button id="removeBtn" class="primary">Remove Line Breaks</button>
                 </div>
 
-                <div class="output-section">
-                    <h3>Result</h3>
-                    <textarea id="outputText" class="output" readonly placeholder="Your cleaned text will appear here..."></textarea>
-                    
-                    <div class="btn-group">
-                        <button id="copyBtn">Copy to Clipboard</button>
+                <h3>Result</h3>
+                <textarea id="outputText" placeholder="Your cleaned text will appear here..." aria-label="Output text" readonly></textarea>
+
+                <div class="btn-group">
+                    <button id="copyBtn" class="secondary">Copy to Clipboard</button>
+                    <button id="clearBtn" class="secondary">Clear All</button>
+                </div>
+            </section>
+
+            <!-- SEO Content: How to Use -->
+            <section class="seo-section">
+                <div class="how-to-use">
+                    <h2>How to Use Remove Line Breaks</h2>
+                    <ol>
+                        <li><strong>Paste your text</strong> into the input text area. This works great with text copied from PDFs, emails, or web pages.</li>
+                        <li><strong>Choose an option</strong>: replace line breaks with spaces to maintain word separation, or remove them entirely to join lines directly.</li>
+                        <li><strong>Click "Remove Line Breaks"</strong> to process your text instantly.</li>
+                        <li><strong>Copy the result</strong> using the "Copy to Clipboard" button to use your cleaned text elsewhere.</li>
+                    </ol>
+                </div>
+
+                <!-- Benefits -->
+                <h2>Why Use Our Line Break Remover?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="icon">📋</div>
+                        <h3>Perfect for PDF Text</h3>
+                        <p>Clean up text copied from PDFs that includes unwanted line breaks after every line.</p>
                     </div>
                     
-                    <div id="copyAlert" class="alert success" style="display: none;">
-                        ✓ Text copied to clipboard!
+                    <div class="benefit-card">
+                        <div class="icon">⚡</div>
+                        <h3>Two Removal Methods</h3>
+                        <p>Choose to replace line breaks with spaces or remove them entirely based on your formatting needs.</p>
                     </div>
+                    
+                    <div class="benefit-card">
+                        <div class="icon">✨</div>
+                        <h3>Instant Cleanup</h3>
+                        <p>Transform messy, multi-line text into clean, properly formatted content with a single click.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">When should I use "replace with spaces" vs "remove entirely"?</div>
+                    <div class="faq-answer">
+                        <p>Use "replace with spaces" when you want to maintain word separation (recommended for most cases). Use "remove entirely" when line breaks occur in the middle of words or when you want to join lines directly without spaces.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Why does PDF text have so many line breaks?</div>
+                    <div class="faq-answer">
+                        <p>PDFs format text for visual display, not for copying. When you copy text from a PDF, each line ends with a line break character, even if they're part of the same paragraph. Our tool removes these breaks to restore proper paragraph formatting.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Will this remove all line breaks including paragraph breaks?</div>
+                    <div class="faq-answer">
+                        <p>Yes, this tool removes all line breaks. If you need to preserve paragraph structure while removing only single line breaks, try our Text Formatter tool which offers more advanced options.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is my text stored or sent to a server?</div>
+                    <div class="faq-answer">
+                        <p>No, all processing happens locally in your browser. Your text is never uploaded, stored, or transmitted to any server. Your content remains completely private.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Try Another Tool Section -->
+            <section class="try-another-section">
+                <h2>Try Another Tool</h2>
+                <div class="tool-suggestions">
+                    <a href="formatter.html" class="tool-suggestion-card">
+                        <div class="icon">✨</div>
+                        <h3>Text Formatter</h3>
+                        <p>Advanced formatting and sorting options</p>
+                    </a>
+                    
+                    <a href="word-counter.html" class="tool-suggestion-card">
+                        <div class="icon">📊</div>
+                        <h3>Word Counter</h3>
+                        <p>Count words, sentences, and reading time</p>
+                    </a>
+                    
+                    <a href="case-converter.html" class="tool-suggestion-card">
+                        <div class="icon">🔄</div>
+                        <h3>Case Converter</h3>
+                        <p>Transform text between different cases</p>
+                    </a>
+                    
+                    <a href="char-counter.html" class="tool-suggestion-card">
+                        <div class="icon">🔢</div>
+                        <h3>Character Counter</h3>
+                        <p>Track characters with Twitter and Instagram limits</p>
+                    </a>
                 </div>
             </section>
         </div>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Text Tools & Word Counter Hub. All rights reserved.</p>
-        <p><a href="https://github.com/wonderful809/word-counter1">Open Source on GitHub</a></p>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>TextTools</h3>
+                <p>Professional text utilities for everyone. Fast, free, and privacy-focused.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Tools</h3>
+                <ul>
+                    <li><a href="word-counter.html">Word Counter</a></li>
+                    <li><a href="char-counter.html">Character Counter</a></li>
+                    <li><a href="case-converter.html">Case Converter</a></li>
+                    <li><a href="remove-line-breaks.html">Remove Line Breaks</a></li>
+                    <li><a href="formatter.html">Text Formatter</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="https://github.com/wonderful809/word-counter1">GitHub</a></li>
+                    <li><a href="https://github.com/wonderful809/word-counter1/issues">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="https://github.com/wonderful809/word-counter1" aria-label="GitHub">⚙️</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 TextTools. All rights reserved. | Made with ❤️ for text lovers everywhere | <a href="https://github.com/wonderful809/word-counter1">Open Source</a></p>
+        </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
+    </button>
+
+    <script src="js/shared.js"></script>
     <script src="js/remove-line-breaks.js"></script>
 </body>
 </html>
